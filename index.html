@@ -19460,7 +19460,7 @@ button.n-chip:hover, a.n-chip:hover { background: color-mix(in srgb, var(--n-tex
   }
 
   function safeEncode(s) {
-    try { return encodeURIComponent(s); } catch (_) { return encodeURIComponent(s.replace(/[\ud800-\udfff]/g, '�')); }
+    try { return encodeURIComponent(s); } catch (_) { return encodeURIComponent(s.replace(/[\ud800-\udfff]/g, '\uFFFD')); }
   }
 
   function claudeHref(text) { return CLAUDE_NEW + '?q=' + safeEncode(clip(text, MAX_Q)); }
